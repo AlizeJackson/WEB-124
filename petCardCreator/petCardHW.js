@@ -47,8 +47,8 @@ const owner2 = { name: "Tim", phone: "555-0419" };
 
 // Instantiate 2 Pet objects using 'new Pet(...)' with image filenames for the dog and parrot
 const pet1 = new Pet("Stanley", "cat", 6, owner1, "pet1", "cat.webp");
-const pet2 = new Pet( "Margo", "dog", 4, owner2, "pet2", "dog.wedp");
-const pet3 = new Pet("Polly", parrot, 25, null, "pet3", "parrots.jpg");
+const pet2 = new Pet( "Margo", "dog", 4, owner2, "pet2", "dog.webp");
+const pet3 = new Pet("Polly", "parrot", 25, null, "pet3", "parrots.jpg");
 
 const pets = [pet1, pet2, pet3];
 
@@ -56,10 +56,17 @@ const pets = [pet1, pet2, pet3];
 // Log Name, Type, Age, Owner Name, Owner Phone, and ID.
 pets.forEach(function (pet) {
   // Write your console.log statements here:
-  console.log(pet.name + " is a " + pet.type + ", age " + pet.age + ". They have an owner and their phone numeber is " + pet.owner + ". The ID for the pet is " + pet.id + ".");
+  console.log(`Name: ${pet.name}`);
+  console.log(`Type: ${pet.type}`);
+  console.log(`Age: ${pet.age}`);
+  console.log(`Owner Name: ${pet.getOwnerName()}`);
+  console.log(`Owner Phone: ${pet.getOwnerPhone()}`);
+  console.log(`ID: ${pet.getID()}`);
 });
 
 pet1.haveBirthday();
+
+console.log(`Updated age for ${pet1.name}: ${pet1.age}`);
 
 
 // DOM SELECTION
@@ -69,12 +76,12 @@ let currentIndex = 0;
 // Select the DOM elements using document.querySelector().
 // Double check that element IDs match your HTML file exactly!
 const headingElement = document.querySelector("#galleryHeading");
-const image = document.querySelector("PetImage");
-const petName = document.querySelector("petName");
-const petInfo = document.querySelector("petType");
-const petOwner = document.querySelector("petOwner");
-const ownerPhone = document.querySelector("OwnerPhone");
-const petID = document.querySelector("petID");
+const image = document.querySelector("#PetImage");
+const petName = document.querySelector("#petName");
+const petInfo = document.querySelector("#petType");
+const petOwner = document.querySelector("#petOwner");
+const ownerPhone = document.querySelector("#OwnerPhone");
+const petID = document.querySelector("#petID");
 //finish the DOM definitions for PetImage, petName, petDetails, petOwner,OwnerPhone, and petID
 
 
@@ -88,21 +95,24 @@ const prevButton = document.querySelector("#prev");
 function showPet(index) {
   const currentPet = pets[index];
   
-document.getElementById("galleryHeading").textContent = `Pet ${index + 1} of ${pets.length}`;
+headingElement.textContent = `Pet ${index + 1} of ${pets.length}`;
+  
+if (image) {
 
-document.getElementById("PetImage").src = currentPet.image;
+    image.src = currentPet.image;
+
+    image.alt = `Photo of ${currentPet.name}`;
+}
   
-document.getElementById("PetImage").alt.textContent = "Photo of " + currentPet.name;
+petName.textContent = currentPet.name;
   
-document.getElementById("petName").textContent = currentPet.name;
+petInfo.textContent = currentPet.getDescription();
   
-document.getElementById("petType").textContent = currentPet.getDescription();
+petOwner.textContent = currentPet.getOwnerName();
   
-document.getElementById("petOwner").textContent = currentPet.getOwnerName();
-  
-document.getElementById("OwnerPhone").textContent = currentPet.getOwnerPhone();
-  
-document.getElementById("petID").textContent = currentPet.id
+ownerPhone.textContent = currentPet.getOwnerPhone();
+
+petID.textContent = currentPet.id;
 
   
   // 1. Update gallery heading text content (e.g., "Pet 1 of 3")
@@ -118,29 +128,21 @@ document.getElementById("petID").textContent = currentPet.id
 // Complete button handlers to update currentIndex and loop at boundaries.
 function handleNextClick() {
   // Increment index. If index exceeds array length, reset to 0. Then update display.
-  nextButton.addEventListener('click', () => {
     currentIndex++;
-    
-    if(currentIndex >= pet.length) {
+    if(currentIndex >= pets.length) {
       currentIndex = 0;
-      
-      showPet(currentIndex);
     }
-  })
+  showPet(currentIndex);
 }
 
 function handlePrevClick() {
-  prevButton.addEventListener('click', () => {
-    currentindex - 1;
+    currentIndex--;
     if(currentIndex < 0) {
-      currentIndex = pet.length - 1
-      
-      showPet(currentIndex);
+      currentIndex = pets.length - 1
     }
-    
-  })
-  // Decrement index. If index is less than 0, wrap to last item. Then update display.
+  showPet(currentIndex);
 }
+  // Decrement index. If index is less than 0, wrap to last item. Then update display.
 
 // Event Listeners
 nextButton.addEventListener("click", handleNextClick);
