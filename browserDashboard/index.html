@@ -1,0 +1,29 @@
+<!--Alize Jackson WEB 124 10/17/2026-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Browser Info Dashboard</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="dashboard.js" defer></script>
+    </head>
+    <body>
+        <div class="area">
+        <h1>Browser Info Dashboard</h1>
+        <h4>Tell me your favorite website and I'll give your details!</h4>
+        <form id="browserForm" class="browserForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div id="error"></div>
+            <br>
+            <label for="website">Your Favorite Website:</label>
+            <input type="url" id="website" name="website" required>
+            <br>
+            <button type="submit">Submit!</button>
+        </form>
+        <section id="section" class="section">
+            <p>Your information will display here.</p>
+        </section>
+        </div>
+    </body>
+</html>
