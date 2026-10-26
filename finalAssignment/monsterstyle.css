@@ -1,0 +1,231 @@
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand";
+}
+
+body {
+    background-image: linear-gradient(to bottom, black, #D53B95);
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    outline: solid #d53b95 3px;
+}
+
+h4 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    outline: solid #d53b95 1px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+  
+
+nav li {
+    font-size: medium;
+    font-weight: bold;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+    border: white dashed 5px;
+    border-radius: 15px;
+    background-color: #D53B95;
+    text-align: center;
+}
+
+.frankbutton a:hover {
+    background-color: #4c97a7;
+    color: #a02d41;
+}
+
+.dracbutton a:hover {
+    background-color: #704a63;
+    color: #f7dce5;
+}
+
+.clawbutton a:hover {
+    background-color: #60277a;
+    color: #f26476;
+}
+
+.lagbutton a:hover {
+    background-color: #02aded;
+    color: #f299c1;
+}
+
+.cleobutton a:hover {
+    background-color: #D09B29;
+    color: #46230F;
+}
+
+.image {
+    max-width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.textcontent {
+    display: flex;
+    flex-direction: column;
+}
+
+.textcontent h2 {
+    margin: 0 0 10px;
+}
+
+.textcontent p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.frankiediv {
+    border: solid black 5px;
+    border-radius: 40px;
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #4c97a7;
+    color: #d9edd4;
+}
+
+.dracdiv {
+    border: solid black 5px;
+    border-radius: 40px;
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #e884b6;
+    color: #704a63;
+}
+
+.clawdiv {
+    border: solid black 5px;
+    border-radius: 40px;
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #60277a;
+    color: #e7b252;
+}
+
+.lagdiv {
+    border: solid black 5px;
+    border-radius: 40px;
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #5eaaab;
+    color: #f7c2d9;
+}
+
+.cleodiv {
+    border: solid black 5px;
+    border-radius: 40px;
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #D09B29;
+    color: #46230F;
+}
+
+.frankiediv.active, .dracdiv.active, .clawdiv.active, .lagdiv.active, .cleodiv.active, .messageboard.active{
+    display:flex;
+}
+
+.messageboard {
+    flex-direction: column;
+    text-align: center;
+    background-color: pink;
+    border: solid 5px black;
+    border-radius: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: black;
+    display:none;
+}
+
+.messageform input {
+    margin-bottom: 24px;
+}
+
+.submitbutton {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #A60845;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.submitbutton:hover {
+    background-color: #723c70;
+    color: white;
+}
+
+.section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    outline: solid yellow 5px;
+    margin-top: 10px;
+}
+
+footer a {
+    color: yellow;
+}
+
+.funnynote {
+    font-size: x-small;
+    padding-bottom: 20px;
+}
+
+.java {
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    padding: 5px 5px 5px 5px;
+}
+
+.java p {
+    font-size: small;
+}
